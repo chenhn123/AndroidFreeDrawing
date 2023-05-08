@@ -37,25 +37,26 @@
 31-->U:\BasicMultitouch\Application\src\main\AndroidManifest.xml:27:9-45
 32        android:label="@string/app_name"
 32-->U:\BasicMultitouch\Application\src\main\AndroidManifest.xml:28:9-41
-33        android:theme="@android:style/Theme.NoTitleBar" >
-33-->U:\BasicMultitouch\Application\src\main\AndroidManifest.xml:29:9-56
-34        <activity
-34-->U:\BasicMultitouch\Application\src\main\AndroidManifest.xml:30:9-38:20
-35            android:name="com.example.android.basicmultitouch.MainActivity"
-35-->U:\BasicMultitouch\Application\src\main\AndroidManifest.xml:31:13-41
-36            android:label="@string/app_name" >
-36-->U:\BasicMultitouch\Application\src\main\AndroidManifest.xml:32:13-45
-37            <intent-filter>
-37-->U:\BasicMultitouch\Application\src\main\AndroidManifest.xml:33:13-37:29
-38                <action android:name="android.intent.action.MAIN" />
-38-->U:\BasicMultitouch\Application\src\main\AndroidManifest.xml:34:17-69
-38-->U:\BasicMultitouch\Application\src\main\AndroidManifest.xml:34:25-66
-39
-40                <category android:name="android.intent.category.LAUNCHER" />
-40-->U:\BasicMultitouch\Application\src\main\AndroidManifest.xml:36:17-77
-40-->U:\BasicMultitouch\Application\src\main\AndroidManifest.xml:36:27-74
-41            </intent-filter>
-42        </activity>
-43    </application>
-44
-45</manifest>
+33        android:testOnly="true"
+34        android:theme="@android:style/Theme.NoTitleBar" >
+34-->U:\BasicMultitouch\Application\src\main\AndroidManifest.xml:29:9-56
+35        <activity
+35-->U:\BasicMultitouch\Application\src\main\AndroidManifest.xml:30:9-38:20
+36            android:name="com.example.android.basicmultitouch.MainActivity"
+36-->U:\BasicMultitouch\Application\src\main\AndroidManifest.xml:31:13-41
+37            android:label="@string/app_name" >
+37-->U:\BasicMultitouch\Application\src\main\AndroidManifest.xml:32:13-45
+38            <intent-filter>
+38-->U:\BasicMultitouch\Application\src\main\AndroidManifest.xml:33:13-37:29
+39                <action android:name="android.intent.action.MAIN" />
+39-->U:\BasicMultitouch\Application\src\main\AndroidManifest.xml:34:17-69
+39-->U:\BasicMultitouch\Application\src\main\AndroidManifest.xml:34:25-66
+40
+41                <category android:name="android.intent.category.LAUNCHER" />
+41-->U:\BasicMultitouch\Application\src\main\AndroidManifest.xml:36:17-77
+41-->U:\BasicMultitouch\Application\src\main\AndroidManifest.xml:36:27-74
+42            </intent-filter>
+43        </activity>
+44    </application>
+45
+46</manifest>

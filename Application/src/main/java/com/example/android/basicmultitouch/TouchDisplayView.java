@@ -152,7 +152,7 @@ public class TouchDisplayView extends View {
 
                 TouchHistory data = TouchHistory.obtain(event.getX(0), event.getY(0),
                         event.getPressure(0));
-                data.label = "id: " + 0;
+                data.label = "id:" + 0 + ", x: " + data.x +", y:" +data.y;
 
                 /*
                  * Store the data under its pointer identifier. The pointer
@@ -182,7 +182,7 @@ public class TouchDisplayView extends View {
 
                 TouchHistory data = TouchHistory.obtain(event.getX(index), event.getY(index),
                         event.getPressure(index));
-                data.label = "id: " + id;
+                data.label = "id:" + id + ", x:" + data.x +", y:" + data.y;
 
                 /*
                  * Store the data under its pointer identifier. The index of
@@ -266,6 +266,8 @@ public class TouchDisplayView extends View {
                     data.addHistory(data.x, data.y);
                     data.setTouch(event.getX(index), event.getY(index),
                             event.getPressure(index));
+                    data.label = "id:" + id + ", x:" + data.x +", y:" + data.y;
+
 
                 }
 
@@ -319,7 +321,7 @@ public class TouchDisplayView extends View {
 
     // inactive border
     private static final float INACTIVE_BORDER_DP = 0f;
-    private Paint mBorderPaint = new Paint();
+    private final Paint mBorderPaint = new Paint();
     private float mBorderWidth;
 
     public final int[] COLORS = {
