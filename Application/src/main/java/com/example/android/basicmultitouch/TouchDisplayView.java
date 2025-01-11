@@ -22,6 +22,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PointF;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.MotionEvent;
 import android.view.View;
@@ -35,6 +36,7 @@ import com.example.android.basicmultitouch.Pools.SimplePool;
  */
 public class TouchDisplayView extends View {
 
+    private final String sTag = "TouchDisplayView";
     // Hold data for active touch pointer IDs
     private SparseArray<TouchHistory> mTouches;
 
@@ -132,15 +134,17 @@ public class TouchDisplayView extends View {
     public boolean onTouchEvent(MotionEvent event) {
 
         final int action = event.getAction();
-
         /*
          * Switch on the action. The action is extracted from the event by
          * applying the MotionEvent.ACTION_MASK. Alternatively a call to
          * event.getActionMasked() would yield in the action as well.
          */
         switch (action & MotionEvent.ACTION_MASK) {
-
             case MotionEvent.ACTION_DOWN: {
+                if (BuildConfig.DEBUG) {
+                    // do something for a debug build
+                    Log.i(sTag, "MotionEvent.ACTION_DOWN");
+                }
                 // first pressed gesture has started
 
                 /*
@@ -167,6 +171,10 @@ public class TouchDisplayView extends View {
             }
 
             case MotionEvent.ACTION_POINTER_DOWN: {
+                //if (BuildConfig.DEBUG) {
+                    // do something for a debug build
+                    Log.i(sTag, "MotionEvent.ACTION_POINTER_DOWN");
+                //}
                 /*
                  * A non-primary pointer has gone down, after an event for the
                  * primary pointer (ACTION_DOWN) has already been received.
@@ -196,6 +204,10 @@ public class TouchDisplayView extends View {
             }
 
             case MotionEvent.ACTION_UP: {
+                if (BuildConfig.DEBUG) {
+                    // do something for a debug build
+                    Log.i(sTag, "MotionEvent.ACTION_UP");
+                }
                 /*
                  * Final pointer has gone up and has ended the last pressed
                  * gesture.
@@ -217,6 +229,10 @@ public class TouchDisplayView extends View {
             }
 
             case MotionEvent.ACTION_POINTER_UP: {
+                if (BuildConfig.DEBUG) {
+                    // do something for a debug build
+                    Log.i(sTag, "MotionEvent.ACTION_POINTER_UP");
+                }
                 /*
                  * A non-primary pointer has gone up and other pointers are
                  * still active.
@@ -238,6 +254,10 @@ public class TouchDisplayView extends View {
             }
 
             case MotionEvent.ACTION_MOVE: {
+                if (BuildConfig.DEBUG) {
+                    // do something for a debug build
+                    Log.i(sTag, "MotionEvent.ACTION_MOVE");
+                }
                 /*
                  * A change event happened during a pressed gesture. (Between
                  * ACTION_DOWN and ACTION_UP or ACTION_POINTER_DOWN and
@@ -267,12 +287,57 @@ public class TouchDisplayView extends View {
                     data.setTouch(event.getX(index), event.getY(index),
                             event.getPressure(index));
                     data.label = "id:" + id + ", x:" + data.x +", y:" + data.y;
-
-
                 }
-
                 break;
             }
+            case MotionEvent.ACTION_HOVER_ENTER: {
+                if (BuildConfig.DEBUG) {
+                    // do something for a debug build
+                    Log.i(sTag, "MotionEvent.ACTION_HOVER_ENTER");
+                }
+                break;
+            }
+            case MotionEvent.ACTION_HOVER_EXIT: {
+                if (BuildConfig.DEBUG) {
+                    // do something for a debug build
+                    Log.i(sTag, "MotionEvent.ACTION_HOVER_EXIT");
+                }
+                break;
+            }
+            case MotionEvent.ACTION_HOVER_MOVE: {
+                if (BuildConfig.DEBUG) {
+                    // do something for a debug build
+                    Log.i(sTag, "MotionEvent.ACTION_HOVER_MOVE");
+
+                }
+                break;
+            }
+            case MotionEvent.ACTION_OUTSIDE: {
+                //if (BuildConfig.DEBUG) {
+                    // do something for a debug build
+                    Log.i(sTag, "MotionEvent.ACTION_OUTSIDE");
+
+                //}
+                break;
+            }
+            case MotionEvent.ACTION_CANCEL: {
+                if (BuildConfig.DEBUG) {
+                    // do something for a debug build
+                    Log.i(sTag, "MotionEvent.ACTION_CANCEL");
+
+                }
+                break;
+            }
+            case MotionEvent. ACTION_SCROLL : {
+                if (BuildConfig.DEBUG) {
+                    // do something for a debug build
+                    Log.i(sTag, "MotionEvent.ACTION_SCROLL");
+
+                }
+                break;
+            }
+
+
         }
 
         // trigger redraw on UI thread

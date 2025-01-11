@@ -21,7 +21,7 @@
 
     <uses-sdk
         android:minSdkVersion="14"
-        android:targetSdkVersion="28" />
+        android:targetSdkVersion="33" />
 
     <!-- Min/target SDK versions (<uses-sdk>) managed by build.gradle -->
     <application

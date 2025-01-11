@@ -30,8 +30,16 @@ import android.view.WindowManager;
  * positions of this pointer and draws them. This example shows the relationship
  * between MotionEvent indices, pointer identifiers and actions.
  *
+ *
  * @see android.view.MotionEvent
  */
+/**
+ *  We could use following command for adb open application and debug.
+ *  am start -n com.example.android.basicmultitouch/com.example.android.basicmultitouch.MainActivity
+ */
+
+
+
 public class MainActivity extends Activity {
     TouchDisplayView mView;
 
